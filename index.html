@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Lee | Portfolio</title>
+    <title>Ryan Lee | Finance Portfolio</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -158,24 +158,12 @@
             background: var(--border-color);
         }
 
-        /* Profile Headshot Styling */
-        .profile-pic {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 1.2rem;
-            display: block;
-            box-shadow: var(--shadow);
-        }
-
-        /* Hero / Personal Statement Section */
+        /* Hero Section */
         .hero {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
-            padding-top: 70px;
+            padding-top: 80px;
         }
 
         .hero-content {
@@ -425,7 +413,6 @@
         <!-- Hero & Personal Statement Section -->
         <section id="about" class="hero">
             <div class="hero-content">
-                <img src="Ryan.Lee_Headshot.jpg" alt="Ryan Lee" class="profile-pic" onerror="this.src='https://via.placeholder.com/130'">
                 <p class="greeting">Hello, I'm</p>
                 <h1>Ryan Lee</h1>
                 
@@ -490,7 +477,7 @@
             </div>
         </section>
 
-        <!-- Requirement: Projects Section (3 Projects) -->
+        <!-- Requirement: Projects Section -->
         <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
@@ -508,28 +495,62 @@
                             <span class="tech-badge">PowerPoint</span>
                         </div>
                         <div class="project-links">
-                            <a href="Skyline Design CIM2.pdf" target="_blank" class="project-link">
+                            <a href="Skyline Design CIM2.pdf#page=1" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fa-solid fa-file-pdf"></i> View CIM PDF
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: DCF Valuation Model -->
+                <!-- Project 2: Interactive DCF Valuation Model -->
                 <div class="project-card">
                     <div class="project-info">
-                        <h3 class="project-title">3-Statement & DCF Valuation Model</h3>
+                        <h3 class="project-title">Interactive DCF Valuation Model</h3>
                         <p class="project-description">
-                            Built a dynamic Discounted Cash Flow valuation script to project 5-year free cash flows, calculate terminal value using the Gordon Growth method, and estimate intrinsic enterprise value.
+                            Run real-time Discounted Cash Flow valuation scenarios directly on this page. Adjust parameters below to calculate 5-year Unlevered Free Cash Flows and Implied Enterprise Value.
                         </p>
+
+                        <!-- Live DCF Calculator Widget -->
+                        <div style="background: var(--bg-primary); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; font-size: 0.85rem; margin-bottom: 1rem;">
+                                <div>
+                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">Starting Rev ($M):</label>
+                                    <input type="number" id="dcf-rev" value="100" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                </div>
+                                <div>
+                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">Growth Rate (%):</label>
+                                    <input type="number" id="dcf-growth" value="8" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                </div>
+                                <div>
+                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">EBIT Margin (%):</label>
+                                    <input type="number" id="dcf-margin" value="20" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                </div>
+                                <div>
+                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">WACC (%):</label>
+                                    <input type="number" id="dcf-wacc" value="9" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                </div>
+                            </div>
+
+                            <button onclick="runDCFCalculator()" class="btn btn-primary" style="width: 100%; padding: 0.5rem; justify-content: center; font-size: 0.9rem;">
+                                Calculate Enterprise Value
+                            </button>
+
+                            <!-- Output Display -->
+                            <div id="dcf-output" style="margin-top: 1rem; padding: 0.8rem; background: var(--bg-card); border-radius: 4px; text-align: center; border: 1px solid var(--accent); display: none;">
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Implied Enterprise Value:</div>
+                                <div id="dcf-result-ev" style="font-size: 1.4rem; font-weight: 700; color: var(--accent);">$0.00M</div>
+                                <div id="dcf-result-pv" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;"></div>
+                            </div>
+                        </div>
+
                         <div class="project-tech">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">DCF Valuation</span>
-                            <span class="tech-badge">Financial Modeling</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">DCF Model</span>
+                            <span class="tech-badge">Valuation</span>
                         </div>
                         <div class="project-links">
-                            <a href="dcf_model.py" target="_blank" class="project-link">
-                                <i class="fa-brands fa-github"></i> View Model Code
+                            <a href="https://github.com/ryan2tac/ryan2tac.github.io/blob/main/dcf_model.py" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fa-brands fa-github"></i> View Python Source
                             </a>
                         </div>
                     </div>
@@ -549,7 +570,7 @@
                             <span class="tech-badge">GitHub Pages</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ryan2tac" target="_blank" class="project-link">
+                            <a href="https://github.com/ryan2tac/ryan2tac.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fa-brands fa-github"></i> Repository
                             </a>
                         </div>
@@ -593,6 +614,44 @@
                 themeIcon.className = 'fa-solid fa-sun';
             }
         });
+
+        // Interactive DCF Valuation Calculator Function
+        function runDCFCalculator() {
+            const revenue = parseFloat(document.getElementById('dcf-rev').value) * 1000000;
+            const growthRate = parseFloat(document.getElementById('dcf-growth').value) / 100;
+            const margin = parseFloat(document.getElementById('dcf-margin').value) / 100;
+            const wacc = parseFloat(document.getElementById('dcf-wacc').value) / 100;
+            const taxRate = 0.21;
+            const terminalGrowth = 0.025;
+
+            if (isNaN(revenue) || isNaN(growthRate) || isNaN(margin) || isNaN(wacc)) {
+                alert("Please enter valid numbers for all assumptions.");
+                return;
+            }
+
+            let currentRev = revenue;
+            let sumPvFcf = 0;
+            let lastNominalFcf = 0;
+
+            for (let year = 1; year <= 5; year++) {
+                currentRev *= (1 + growthRate);
+                let ebit = currentRev * margin;
+                let fcf = ebit * (1 - taxRate);
+                lastNominalFcf = fcf;
+
+                let pvFcf = fcf / Math.pow(1 + wacc, year);
+                sumPvFcf += pvFcf;
+            }
+
+            let terminalValue = (lastNominalFcf * (1 + terminalGrowth)) / (wacc - terminalGrowth);
+            let pvTerminalValue = terminalValue / Math.pow(1 + wacc, 5);
+
+            let enterpriseValue = sumPvFcf + pvTerminalValue;
+
+            document.getElementById('dcf-output').style.display = 'block';
+            document.getElementById('dcf-result-ev').textContent = '$' + (enterpriseValue / 1000000).toFixed(2) + 'M';
+            document.getElementById('dcf-result-pv').textContent = `5-Yr FCF PV: $${(sumPvFcf / 1000000).toFixed(2)}M | Terminal PV: $${(pvTerminalValue / 1000000).toFixed(2)}M`;
+        }
     </script>
 </body>
 </html>
