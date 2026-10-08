@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ryan Lee - Finance student at Rutgers Business School. Portfolio of M&A, valuation and financial modeling projects.">
     <title>Ryan Lee | Finance Portfolio</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -10,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         /* CSS Variables & Theme Configuration */
         :root {
@@ -39,15 +40,8 @@
         }
 
         /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -57,19 +51,11 @@
             transition: var(--transition);
         }
 
-        h1, h2, h3, .logo {
-            font-family: 'Outfit', sans-serif;
-        }
+        h1, h2, h3, .logo { font-family: 'Outfit', sans-serif; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        section {
-            padding: 5rem 0;
-        }
+        section { padding: 5rem 0; scroll-margin-top: 70px; }
 
         .section-title {
             font-size: 2rem;
@@ -102,34 +88,14 @@
             transition: var(--transition);
         }
 
-        [data-theme="light"] header {
-            background-color: rgba(248, 250, 252, 0.85);
-        }
+        [data-theme="light"] header { background-color: rgba(248, 250, 252, 0.85); }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
 
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
 
         .nav-links a {
             color: var(--text-secondary);
@@ -137,10 +103,7 @@
             font-weight: 500;
             transition: var(--transition);
         }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+        .nav-links a:hover { color: var(--accent); }
 
         .theme-toggle {
             background: none;
@@ -152,23 +115,16 @@
             border-radius: 50%;
             transition: var(--transition);
         }
+        .theme-toggle:hover { color: var(--accent); background: var(--border-color); }
 
-        .theme-toggle:hover {
-            color: var(--accent);
-            background: var(--border-color);
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         /* Hero Section */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
+        .hero { min-height: 80vh; display: flex; align-items: center; padding-top: 80px; }
+        .hero-content { max-width: 800px; }
 
         .greeting {
             color: var(--accent);
@@ -179,11 +135,7 @@
             text-transform: uppercase;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
 
         .personal-statement {
             font-size: 1.25rem;
@@ -195,11 +147,7 @@
             font-style: italic;
         }
 
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
+        .hero-btns { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
 
         .btn {
             display: inline-flex;
@@ -213,34 +161,14 @@
             cursor: pointer;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: #ffffff;
-            border: 2px solid var(--accent);
-        }
+        .btn-primary { background-color: var(--accent); color: #ffffff; border: 2px solid var(--accent); }
+        .btn-primary:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            border-color: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
+        .btn-secondary { background-color: transparent; color: var(--text-primary); border: 2px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
         /* Skills Showcase */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 
         .skill-category {
             background-color: var(--bg-card);
@@ -259,12 +187,7 @@
             gap: 0.5rem;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            list-style: none;
-        }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; }
 
         .skill-tag {
             background-color: var(--bg-primary);
@@ -276,11 +199,7 @@
         }
 
         /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
         .project-card {
             background-color: var(--bg-card);
@@ -292,23 +211,10 @@
             display: flex;
             flex-direction: column;
         }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .project-info {
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
+        .project-info { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .project-title { font-size: 1.3rem; margin-bottom: 0.8rem; }
 
         .project-description {
             color: var(--text-secondary);
@@ -317,12 +223,7 @@
             flex-grow: 1;
         }
 
-        .project-tech {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
+        .project-tech { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
 
         .tech-badge {
             font-size: 0.8rem;
@@ -333,10 +234,7 @@
             border: 1px solid var(--border-color);
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
+        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 
         .project-link {
             color: var(--text-primary);
@@ -348,10 +246,52 @@
             gap: 0.4rem;
             transition: var(--transition);
         }
+        .project-link:hover { color: var(--accent); }
 
-        .project-link:hover {
-            color: var(--accent);
+        /* DCF widget */
+        .dcf-widget {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
         }
+
+        .dcf-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .dcf-inputs label { display: block; color: var(--text-secondary); margin-bottom: 0.2rem; }
+
+        .dcf-inputs input {
+            width: 100%;
+            padding: 0.4rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .dcf-btn { width: 100%; padding: 0.5rem; justify-content: center; font-size: 0.9rem; }
+
+        .dcf-output {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: var(--bg-card);
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--accent);
+            display: none;
+        }
+
+        .dcf-output .label { font-size: 0.8rem; color: var(--text-secondary); }
+        .dcf-output .value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+        .dcf-output .detail { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem; }
+        .dcf-error { margin-top: 0.8rem; font-size: 0.85rem; color: #f87171; display: none; }
 
         /* Footer */
         footer {
@@ -363,28 +303,16 @@
             font-size: 0.9rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+        .social-links a { color: var(--text-secondary); font-size: 1.2rem; transition: var(--transition); }
+        .social-links a:hover { color: var(--accent); }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .personal-statement { font-size: 1.1rem; }
             .nav-links { display: none; }
+            .container { padding: 0 1.2rem; }
         }
     </style>
 </head>
@@ -394,30 +322,29 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Ryan Lee<span>.</span></a>
+                <a href="#about" class="logo">Ryan Lee<span>.</span></a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                 </ul>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
 
-        <!-- Hero & Personal Statement Section -->
+        <!-- Hero & Personal Statement -->
         <section id="about" class="hero">
             <div class="hero-content">
                 <p class="greeting">Hello, I'm</p>
                 <h1>Ryan Lee</h1>
-                
+
                 <p class="personal-statement">
-                    "I am a junior studying Finance at Rutgers University–New Brunswick with previous experience in investment banking and financial analysis, driven to solve complex business challenges."
+                    "I am a junior studying Finance at Rutgers University&ndash;New Brunswick with previous experience in investment banking and financial analysis, driven to solve complex business challenges."
                 </p>
 
                 <div class="hero-btns">
@@ -425,18 +352,20 @@
                     <a href="https://github.com/ryan2tac" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                         <i class="fa-brands fa-github"></i> GitHub
                     </a>
+                    <a href="https://www.linkedin.com/in/ryan-lee2/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Requirement: Skills Showcase Section -->
+        <!-- Skills -->
         <section id="skills">
-            <h2 class="section-title">Professional & Technical Skills</h2>
+            <h2 class="section-title">Professional &amp; Technical Skills</h2>
             <div class="skills-grid">
-                
-                <!-- Category 1: Financial & Analytical -->
+
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-chart-line"></i> Financial Analysis & Valuation</h3>
+                    <h3><i class="fa-solid fa-chart-line"></i> Financial Analysis &amp; Valuation</h3>
                     <ul class="skills-list">
                         <li class="skill-tag">Financial Modeling</li>
                         <li class="skill-tag">Valuation</li>
@@ -448,9 +377,8 @@
                     </ul>
                 </div>
 
-                <!-- Category 2: Software, Data & Tech -->
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-laptop-code"></i> Technical & Software Tools</h3>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Technical &amp; Software Tools</h3>
                     <ul class="skills-list">
                         <li class="skill-tag">Microsoft Excel</li>
                         <li class="skill-tag">Bloomberg Terminal</li>
@@ -462,7 +390,6 @@
                     </ul>
                 </div>
 
-                <!-- Category 3: Professional Competencies -->
                 <div class="skill-category">
                     <h3><i class="fa-solid fa-users"></i> Professional Competencies</h3>
                     <ul class="skills-list">
@@ -477,26 +404,27 @@
             </div>
         </section>
 
-        <!-- Requirement: Projects Section -->
+        <!-- Projects -->
         <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
 
-                <!-- Project 1: Skyline Design CIM -->
+                <!-- Project 1: Sell-Side CIM (Anonymized) -->
                 <div class="project-card">
                     <div class="project-info">
-                        <h3 class="project-title">Skyline Design CIM</h3>
+                        <h3 class="project-title">Sell-Side CIM (Anonymized)</h3>
                         <p class="project-description">
-                            Prepared a sell-side Confidential Information Memorandum (CIM) pitch deck evaluating historical growth drivers, business operations, and valuation metrics for potential transaction buyers.
+                            Prepared a sell-side Confidential Information Memorandum (CIM) for a founder-owned services business during my investment banking internship, covering historical growth drivers, operations, customer concentration, financial projections, and valuation considerations for prospective buyers. Company details are anonymized.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-badge">M&A Analysis</span>
+                            <span class="tech-badge">M&amp;A Analysis</span>
                             <span class="tech-badge">Valuation</span>
+                            <span class="tech-badge">Financial Modeling</span>
                             <span class="tech-badge">PowerPoint</span>
                         </div>
                         <div class="project-links">
-                            <a href="Skyline Design CIM2.pdf#page=1" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fa-solid fa-file-pdf"></i> View CIM PDF
+                            <a href="CIM_redacted2.pdf" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fa-solid fa-file-pdf"></i> View Anonymized CIM
                             </a>
                         </div>
                     </div>
@@ -507,44 +435,45 @@
                     <div class="project-info">
                         <h3 class="project-title">Interactive DCF Valuation Model</h3>
                         <p class="project-description">
-                            Run real-time Discounted Cash Flow valuation scenarios directly on this page. Adjust parameters below to calculate 5-year Unlevered Free Cash Flows and Implied Enterprise Value.
+                            Run Discounted Cash Flow scenarios directly on this page. Adjust the assumptions to calculate 5-year unlevered free cash flows and an implied enterprise value (21% tax rate, 2.5% terminal growth).
                         </p>
 
-                        <!-- Live DCF Calculator Widget -->
-                        <div style="background: var(--bg-primary); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; font-size: 0.85rem; margin-bottom: 1rem;">
+                        <div class="dcf-widget">
+                            <div class="dcf-inputs">
                                 <div>
-                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">Starting Rev ($M):</label>
-                                    <input type="number" id="dcf-rev" value="100" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                    <label for="dcf-rev">Starting Rev ($M):</label>
+                                    <input type="number" id="dcf-rev" value="100" min="0" step="any">
                                 </div>
                                 <div>
-                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">Growth Rate (%):</label>
-                                    <input type="number" id="dcf-growth" value="8" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                    <label for="dcf-growth">Growth Rate (%):</label>
+                                    <input type="number" id="dcf-growth" value="8" step="0.5">
                                 </div>
                                 <div>
-                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">EBIT Margin (%):</label>
-                                    <input type="number" id="dcf-margin" value="20" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                    <label for="dcf-margin">EBIT Margin (%):</label>
+                                    <input type="number" id="dcf-margin" value="20" step="0.5">
                                 </div>
                                 <div>
-                                    <label style="display:block; color: var(--text-secondary); margin-bottom: 0.2rem;">WACC (%):</label>
-                                    <input type="number" id="dcf-wacc" value="9" step="0.5" style="width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">
+                                    <label for="dcf-wacc">WACC (%):</label>
+                                    <input type="number" id="dcf-wacc" value="9" step="0.5">
                                 </div>
                             </div>
 
-                            <button onclick="runDCFCalculator()" class="btn btn-primary" style="width: 100%; padding: 0.5rem; justify-content: center; font-size: 0.9rem;">
+                            <button type="button" id="dcf-run" class="btn btn-primary dcf-btn">
                                 Calculate Enterprise Value
                             </button>
 
-                            <!-- Output Display -->
-                            <div id="dcf-output" style="margin-top: 1rem; padding: 0.8rem; background: var(--bg-card); border-radius: 4px; text-align: center; border: 1px solid var(--accent); display: none;">
-                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Implied Enterprise Value:</div>
-                                <div id="dcf-result-ev" style="font-size: 1.4rem; font-weight: 700; color: var(--accent);">$0.00M</div>
-                                <div id="dcf-result-pv" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;"></div>
+                            <p id="dcf-error" class="dcf-error" role="alert"></p>
+
+                            <div id="dcf-output" class="dcf-output" aria-live="polite">
+                                <div class="label">Implied Enterprise Value:</div>
+                                <div id="dcf-result-ev" class="value">$0.00M</div>
+                                <div id="dcf-result-pv" class="detail"></div>
                             </div>
                         </div>
 
                         <div class="project-tech">
                             <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Python</span>
                             <span class="tech-badge">DCF Model</span>
                             <span class="tech-badge">Valuation</span>
                         </div>
@@ -559,9 +488,9 @@
                 <!-- Project 3: Personal Portfolio Site -->
                 <div class="project-card">
                     <div class="project-info">
-                        <h3 class="project-title">Personal Investment & Academic Portfolio</h3>
+                        <h3 class="project-title">Personal Finance Portfolio Website</h3>
                         <p class="project-description">
-                            Designed and deployed a modern portfolio website hosted on GitHub Pages to feature finance deal decks, valuation models, and quantitative skill sets for recruiters.
+                            Designed and deployed this portfolio site on GitHub Pages to showcase valuation models, finance work samples, and technical skills for recruiters. Includes a light/dark theme and a live DCF calculator.
                         </p>
                         <div class="project-tech">
                             <span class="tech-badge">HTML5</span>
@@ -582,76 +511,93 @@
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/ryan2tac" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ryan-lee2/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/ryan2tac" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ryan-lee2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="mailto:ryan@leefamilyhome.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
-            <p>&copy; <span id="year"></span> Ryan Lee. Created for Personal Portfolio Assignment.</p>
+            <p>&copy; <span id="year"></span> Ryan Lee. Rutgers Business School, Finance, Class of 2028.</p>
         </div>
     </footer>
 
-    <!-- JavaScript logic -->
     <script>
-        // Set dynamic year in footer
+        // Footer year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Theme Switcher Logic
+        // ---------- Theme switcher (remembers choice) ----------
         const themeToggleBtn = document.getElementById('themeToggle');
         const themeIcon = themeToggleBtn.querySelector('i');
 
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            
-            if (currentTheme === 'light') {
-                document.body.removeAttribute('data-theme');
-                themeIcon.className = 'fa-solid fa-moon';
-            } else {
+        function applyTheme(theme) {
+            if (theme === 'light') {
                 document.body.setAttribute('data-theme', 'light');
                 themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                document.body.removeAttribute('data-theme');
+                themeIcon.className = 'fa-solid fa-moon';
             }
+        }
+
+        try { applyTheme(localStorage.getItem('theme')); } catch (e) { /* storage unavailable */ }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const next = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
         });
 
-        // Interactive DCF Valuation Calculator Function
+        // ---------- Interactive DCF calculator ----------
         function runDCFCalculator() {
-            const revenue = parseFloat(document.getElementById('dcf-rev').value) * 1000000;
+            const errorEl = document.getElementById('dcf-error');
+            const outputEl = document.getElementById('dcf-output');
+
+            const revenue = parseFloat(document.getElementById('dcf-rev').value) * 1e6;
             const growthRate = parseFloat(document.getElementById('dcf-growth').value) / 100;
             const margin = parseFloat(document.getElementById('dcf-margin').value) / 100;
             const wacc = parseFloat(document.getElementById('dcf-wacc').value) / 100;
             const taxRate = 0.21;
             const terminalGrowth = 0.025;
 
-            if (isNaN(revenue) || isNaN(growthRate) || isNaN(margin) || isNaN(wacc)) {
-                alert("Please enter valid numbers for all assumptions.");
+            errorEl.style.display = 'none';
+
+            if ([revenue, growthRate, margin, wacc].some(isNaN)) {
+                errorEl.textContent = 'Please enter a valid number for every assumption.';
+                errorEl.style.display = 'block';
+                outputEl.style.display = 'none';
+                return;
+            }
+            if (wacc <= terminalGrowth) {
+                errorEl.textContent = 'WACC must be greater than the 2.5% terminal growth rate.';
+                errorEl.style.display = 'block';
+                outputEl.style.display = 'none';
                 return;
             }
 
             let currentRev = revenue;
             let sumPvFcf = 0;
-            let lastNominalFcf = 0;
+            let lastFcf = 0;
 
             for (let year = 1; year <= 5; year++) {
                 currentRev *= (1 + growthRate);
-                let ebit = currentRev * margin;
-                let fcf = ebit * (1 - taxRate);
-                lastNominalFcf = fcf;
-
-                let pvFcf = fcf / Math.pow(1 + wacc, year);
-                sumPvFcf += pvFcf;
+                const ebit = currentRev * margin;
+                const fcf = ebit * (1 - taxRate);   // simplified: assumes D&A = CapEx and no change in NWC
+                lastFcf = fcf;
+                sumPvFcf += fcf / Math.pow(1 + wacc, year);
             }
 
-            let terminalValue = (lastNominalFcf * (1 + terminalGrowth)) / (wacc - terminalGrowth);
-            let pvTerminalValue = terminalValue / Math.pow(1 + wacc, 5);
+            const terminalValue = (lastFcf * (1 + terminalGrowth)) / (wacc - terminalGrowth);
+            const pvTerminalValue = terminalValue / Math.pow(1 + wacc, 5);
+            const enterpriseValue = sumPvFcf + pvTerminalValue;
 
-            let enterpriseValue = sumPvFcf + pvTerminalValue;
-
-            document.getElementById('dcf-output').style.display = 'block';
-            document.getElementById('dcf-result-ev').textContent = '$' + (enterpriseValue / 1000000).toFixed(2) + 'M';
-            document.getElementById('dcf-result-pv').textContent = `5-Yr FCF PV: $${(sumPvFcf / 1000000).toFixed(2)}M | Terminal PV: $${(pvTerminalValue / 1000000).toFixed(2)}M`;
+            outputEl.style.display = 'block';
+            document.getElementById('dcf-result-ev').textContent = '$' + (enterpriseValue / 1e6).toFixed(2) + 'M';
+            document.getElementById('dcf-result-pv').textContent =
+                '5-Yr FCF PV: $' + (sumPvFcf / 1e6).toFixed(2) + 'M | Terminal PV: $' + (pvTerminalValue / 1e6).toFixed(2) + 'M';
         }
+
+        document.getElementById('dcf-run').addEventListener('click', runDCFCalculator);
     </script>
 </body>
 </html>
